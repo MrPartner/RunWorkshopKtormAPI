@@ -3,6 +3,8 @@ package com.example.routing
 import com.example.db.DatabaseConnection
 import com.example.entities.InstitutoEntity
 import com.example.models.Instituto
+import com.example.models.InstitutoResponse
+import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -36,7 +38,27 @@ fun Application.runworkshopRouter() {
                         hora ?: ""
                     )
                 }
+
             call.respond(runworkshop)
+                /*
+                .firstOrNull()
+
+            if (runworkshop != null) {
+                call.respond(
+                    HttpStatusCode.OK, InstitutoResponse(
+
+                        success = true,
+                        data = "Values has been successfully presented",
+                    )
+                )
+            } else {
+                call.respond(
+                    HttpStatusCode.BadRequest, InstitutoResponse(
+                        success = false,
+                        data = "Failed to show values"
+                    )
+                )
+            }*/
         }
 
     }
