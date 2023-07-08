@@ -7,7 +7,8 @@ data class Instituto(
     val instituto: String,
     val direccion: String,
     val taller: String,
-    val descripcion: String
-    // val fecha: String,
-    //val hora:Int
+    val descripcion: String,
+    val costo: String,
+    val fecha: String,
+    val hora: String
 )

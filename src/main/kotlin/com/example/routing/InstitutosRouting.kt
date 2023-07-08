@@ -23,10 +23,18 @@ fun Application.runworkshopRouter() {
                     val direccion = it[InstitutoEntity.direccion]
                     val taller = it[InstitutoEntity.taller]
                     val descripcion = it[InstitutoEntity.descripcion]
-                    // val fecha = it[InstitutoEntity.fecha]
-                    //val hora = it[InstitutoEntity.hora]
+                    val costo = it[InstitutoEntity.costo]
+                    val fecha = it[InstitutoEntity.fecha]
+                    val hora = it[InstitutoEntity.hora]
                     Instituto(
-                        instituto ?: "", direccion ?: "", taller ?: "", descripcion ?: "")
+                        instituto ?: "",
+                        direccion ?: "",
+                        taller ?: "",
+                        descripcion ?: "",
+                        costo ?: "",
+                        fecha ?: "",
+                        hora ?: ""
+                    )
                 }
             call.respond(runworkshop)
         }
