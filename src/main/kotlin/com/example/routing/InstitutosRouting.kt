@@ -1,8 +1,11 @@
 package com.example.routing
 
 import com.example.db.DatabaseConnection
+import com.example.db.DatabaseConnectionUniversidad
 import com.example.entities.InstitutoEntity
+import com.example.entities.UniversidadEntity
 import com.example.models.Instituto
+import com.example.models.UniversidadModel
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -13,6 +16,7 @@ import org.ktorm.dsl.select
 fun Application.runworkshopRouter() {
 
     val db = DatabaseConnection.database
+    val dbuni = DatabaseConnectionUniversidad.databaseUniversidades
 
     routing {
         //GET show values from database
@@ -38,7 +42,30 @@ fun Application.runworkshopRouter() {
                 }
 
             call.respond(runworkshop)
+        }
 
+        get("/rwuniversidades") {
+            val rwuniversidades = dbuni.from(UniversidadEntity).select()
+                .map {
+                    val universidad = it[UniversidadEntity.universidad]
+                    val direccion = it[UniversidadEntity.direccion]
+                    val taller = it[UniversidadEntity.taller]
+                    val descripcion = it[UniversidadEntity.descripcion]
+                    val costo = it[UniversidadEntity.costo]
+                    val fecha = it[UniversidadEntity.fecha]
+                    val hora = it[UniversidadEntity.hora]
+                    UniversidadModel(
+                        universidad ?: "",
+                        direccion ?: "",
+                        taller ?: "",
+                        descripcion ?: "",
+                        costo ?: "",
+                        fecha ?: "",
+                        hora ?: ""
+                    )
+                }
+
+            call.respond(rwuniversidades)
         }
 
     }

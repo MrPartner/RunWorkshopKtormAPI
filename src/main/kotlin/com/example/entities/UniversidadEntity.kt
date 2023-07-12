@@ -1,6 +1,6 @@
 package com.example.entities
 
-import com.example.entities.InstitutoEntity.primaryKey
+
 import org.ktorm.schema.Table
 import org.ktorm.schema.varchar
 

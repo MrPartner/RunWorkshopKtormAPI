@@ -1,8 +1,6 @@
 package com.example.entities
 
 import org.ktorm.schema.Table
-import org.ktorm.schema.date
-import org.ktorm.schema.time
 import org.ktorm.schema.varchar
 
 object InstitutoEntity : Table<Nothing>("institutos") {
