@@ -1,12 +1,11 @@
 package com.example.entities
 
+import com.example.entities.InstitutoEntity.primaryKey
 import org.ktorm.schema.Table
-import org.ktorm.schema.date
-import org.ktorm.schema.time
 import org.ktorm.schema.varchar
 
-object InstitutoEntity : Table<Nothing>("institutos") {
-    val instituto = varchar("instituto")
+object UniversidadEntity: Table<Nothing>("universidades") {
+    val universidad = varchar("universidad")
     val direccion = varchar("direccion")
     val taller = varchar("taller")
     val descripcion = varchar("descripcion")
