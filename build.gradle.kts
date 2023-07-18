@@ -48,7 +48,7 @@ dependencies {
 
 ktor {
     fatJar {
-        archiveFileName.set("fat.jar")
+        archiveFileName.set("RunWorkshopfat.jar")
     }
 
 }

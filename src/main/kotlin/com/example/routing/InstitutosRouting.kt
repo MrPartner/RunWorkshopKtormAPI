@@ -29,14 +29,16 @@ fun Application.runworkshopRouter() {
                 .map {
                     val instituto = it[InstitutoEntity.instituto]
                     val direccion = it[InstitutoEntity.direccion]
+                    val audiencia = it[InstitutoEntity.audiencia]
                     val taller = it[InstitutoEntity.taller]
                     val descripcion = it[InstitutoEntity.descripcion]
                     val costo = it[InstitutoEntity.costo]
                     val fecha = it[InstitutoEntity.fecha]
                     val hora = it[InstitutoEntity.hora]
                     Instituto(
-                        instituto ?: "",
+                    instituto ?: "",
                         direccion ?: "",
+                        audiencia ?: "",
                         taller ?: "",
                         descripcion ?: "",
                         costo ?: "",
@@ -53,6 +55,7 @@ fun Application.runworkshopRouter() {
                 .map {
                     val universidad = it[UniversidadEntity.universidad]
                     val direccion = it[UniversidadEntity.direccion]
+                    val audiencia = it[UniversidadEntity.audiencia]
                     val taller = it[UniversidadEntity.taller]
                     val descripcion = it[UniversidadEntity.descripcion]
                     val costo = it[UniversidadEntity.costo]
@@ -61,6 +64,7 @@ fun Application.runworkshopRouter() {
                     UniversidadModel(
                         universidad ?: "",
                         direccion ?: "",
+                        audiencia ?: "",
                         taller ?: "",
                         descripcion ?: "",
                         costo ?: "",
@@ -77,6 +81,7 @@ fun Application.runworkshopRouter() {
                 .map {
                     val consultora = it[ConsultoraEntity.consultora]
                     val direccion = it[ConsultoraEntity.direccion]
+                    val audiencia = it[ConsultoraEntity.audiencia]
                     val taller = it[ConsultoraEntity.taller]
                     val descripcion = it[ConsultoraEntity.descripcion]
                     val costo = it[ConsultoraEntity.costo]
@@ -85,6 +90,7 @@ fun Application.runworkshopRouter() {
                     ConsultoraModel(
                         consultora ?: "",
                         direccion ?: "",
+                        audiencia ?: "",
                         taller ?: "",
                         descripcion ?: "",
                         costo ?: "",

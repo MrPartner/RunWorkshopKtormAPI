@@ -6,6 +6,7 @@ import kotlinx.serialization.Serializable
 data class Instituto(
     val instituto: String,
     val direccion: String,
+    val audiencia: String,
     val taller: String,
     val descripcion: String,
     val costo: String,
