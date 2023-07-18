@@ -7,7 +7,7 @@ import com.example.plugins.*
 
 fun main() {
     System.setProperty("io.ktor.development", "true")
-    embeddedServer(Netty, port = 9090, host = "192.168.56.1", module = Application::module)
+    embeddedServer(Netty, port = 9090, host = "192.168.1.7", module = Application::module)
         .start(wait = true)
 }
 
